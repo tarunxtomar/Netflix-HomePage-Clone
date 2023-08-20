@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Netflix</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            background-color: black transparent;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+            overflow-x: hidden;
+        }
+
+        header {
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.35)60%, rgba(0, 0, 0, 0.99)100%), url("/Images\ NC/background2.jpg");
+            background-size: cover;
+            height: 43rem;
+            width: 100%;
+            /* z-index: -1; */
+        }
+
+        .nav-container {
+            background: transparent;
+            height: 5.37rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1;
+        }
+
+        .logo {
+            margin-left: 10rem;
+            height: 2.5rem;
+            width: 9.25rem;
+        }
+
+        .n-logo {
+            height: 2.5rem;
+            width: 9.25rem;
+        }
+
+        .nav-info {
+            display: flex;
+            justify-content: space-evenly;
+            margin-right: 10rem;
+        }
+        .select-item{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1.5px solid darkslategray;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.65);
+            margin-right: 20px;
+        }
+
+        .btn-lang {
+            width: 5rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background: transparent;
+            background: none;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.65);
+        }
+
+        .material-symbols-outlined {
+            font-size: 1.3rem;
+            font-weight: 250;
+        }
+
+        .btn-si {
+            font-size: 0.9rem;
+            font-weight: 500;
+            height: 2rem;
+            width: 5rem;
+            background: rgb(229, 9, 20);
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 0.3rem;
+        }
+
+        /* login section */
+
+        .login-container {
+            height: 20rem;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            top: 5rem;
+        }
+
+        .log-head1 {
+            font-size: 3rem;
+            font-weight: 1500;
+        }
+
+        .login-para {
+            font-size: 1.55rem;
+            font-weight: 400;
+            position: relative;
+            top: 2.5vh;
+        }
+
+        .login-text {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: 7.5vh;
+        }
+
+        .email-bar {
+            position: relative;
+            top: 16.5vh;
+        }
+
+        #type-mail {
+            height: 3.5rem;
+            width: 25rem;
+            font-size: 1rem;
+            font-weight: 400;
+            background-color: rgba(0, 0, 0, 0.65);
+            border: 0.1rem solid grey;
+            border-radius: 0.3rem;
+        }
+
+        .mail-button {
+            height: 3.5rem;
+            width: 11.5rem;
+            font-size: 1.5rem;
+            font-weight: 550;
+            border: none;
+            border-radius: 0.3rem;
+            background-color: rgb(229, 9, 20);
+            position: relative;
+            top: 0.18rem;
+            left: 0.3vw;
+        }
+
+        .mail-button .material-symbols-outlined {
+            position: relative;
+            top: 0.1rem;
+        }
+
+        .email-head-h3 {
+            position: relative;
+            bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 100;
+        }
+
+        .tv-section {
+            /* height: 530px; */
+            height: 33.5rem;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-top: 0.5rem solid rgb(35, 35, 35);
+        }
+
+        .tv-content {
+            position: relative;
+            right: 3rem;
+        }
+
+        .tv-head {
+            font-size: 3rem;
+            font-weight: 900;
+            position: relative;
+            left: 5.1rem;
+        }
+
+        .tv-para {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+
+        .tv-vid {
+            height: 17rem;
+        }
+
+        .download-section {
+            height: 33.5rem;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-top: 0.5rem solid rgb(35, 35, 35);
+        }
+
+        .db-phone {
+            position: relative;
+            left: 9rem;
+        }
+
+        .db-mobile {
+            height: 23rem;
+        }
+
+        .db-button {
+            height: 5.5rem;
+            width: 17.5rem;
+            border: 0.2rem solid rgb(35, 35, 35);
+            border-radius: 0.5rem;
+            position: relative;
+            top: 7rem;
+            right: 17rem;
+            background-color: black
+        }
+
+        .db-text1 {
+            font-weight: 200;
+            position: relative;
+            bottom: 3rem;
+            left: 4.5rem;
+        }
+
+        .db-text1 p {
+            font-size: 0.8rem;
+            color: rgb(37, 37, 253);
+        }
+
+        .btn-img {
+            height: 4rem;
+            width: auto;
+            position: relative;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            left: 0.5rem;
+        }
+
+        .db-text {
+            font-size: 1.5rem;
+            font-weight: 300;
+            position: relative;
+            right: 10.5rem;
+        }
+
+        .db-head {
+            margin-bottom: 1rem;
+        }
+
+        .db-button span {
+            font-size: 2rem;
+            position: relative;
+            bottom: 5rem;
+            left: 13.5rem;
+        }
+
+        .mac-section {
+            height: 33.5rem;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-top: 0.5rem solid rgb(35, 35, 35);
+        }
+
+        .mac-text {
+            position: relative;
+            left: 1.5rem;
+        }
+
+        .mac {
+            position: relative;
+            right: 5rem;
+        }
+
+        .mac-head {
+            font-size: 3rem;
+            font-weight: 900;
+            position: relative;
+            left: 5.1rem;
+        }
+
+        .mac-para {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+
+        .mac-vid {
+            height: 21rem;
+        }
+
+        .children-section {
+            height: 33.5rem;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-top: 0.5rem solid rgb(35, 35, 35);
+        }
+
+        .child-img-c {
+            height: 25rem;
+        }
+
+        .child-text {
+            position: relative;
+            right: 7rem;
+        }
+
+        .child-head {
+            font-size: 3rem;
+            font-weight: 900;
+            position: relative;
+            left: 3.5rem;
+        }
+
+        .child-para {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+
+        .inquiry {
+            height: 55rem;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-top: 0.5rem solid rgb(35, 35, 35);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inq-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 35rem;
+        }
+
+        .inq-box .material-symbols-outlined {
+            font-size: 3rem;
+            font-weight: 400;
+        }
+
+        .inq-para {
+            font-size: 1.5rem;
+        }
+
+        .btn-inq {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(35, 35, 35);
+            border: none;
+            border-radius: 1px;
+            text-align: left;
+            height: 5rem;
+            width: 75vw;
+            margin-top: 0.6rem;
+            padding-left: 2rem;
+            font-size: 1.45rem;
+            font-weight: 400;
+        }
+
+        .inquiry .email-bar {
+            position: relative;
+            top: 5vh;
+            text-align: center;
+        }
+
+        footer {
+            height: 29rem;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-top: 0.5rem solid rgb(35, 35, 35);
+        }
+
+        .foot-content {
+            height: 80%;
+            width: 75%;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+            font-weight: lighter;
+        }
+
+        ul {
+            display: grid;
+            grid-row-gap: 1rem;
+            grid-template-columns: auto auto auto;
+            position: relative;
+            right: 2.45rem;
+            margin-top: 3rem;
+            text-decoration: underline darkgray;
+            font-size: 0.87rem;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .me {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+        }
+
+        .links {
+            height: 30px;
+            background-size: cover;
+            border-radius: 7px;
+            margin-left: 5px;
+        }
+
+        .mylinks {
+            font-size: 1.2rem;
+            font-weight: 850;
+            display: flex;
+            margin-left: 5px;
+        }
+
+        .n-ind {
+            font-size: 0.87rem;
+            font-weight: lighter;
+            margin-top: 2rem;
+        }
+
+        .mail-button:hover,
+        .btn-si:hover {
+            background-color: rgb(192, 13, 13);
+        }
+
+        .btn-inq:hover {
+            background-color: darkgray;
+        }
+
+        @media (max-width: 428px) {
+    /* Adjust header and navigation */
+    header {
+        height: auto;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    /* Adjust logo margins */
+    .logo {
+        margin: 0; /* Remove margin-left and margin-bottom */
+    }
+
+    /* Adjust navigation information margins */
+    .nav-info {
+        margin: 1rem 0;
+    }
+
+    /* Adjust login container */
+    .login-container {
+        top: 2rem; /* Adjust top margin */
+        height: auto;
+    }
+
+    /* Adjust email bar position */
+    .email-bar {
+        top: 1rem;
+    }
+
+    /* Adjust sections */
+    .tv-section,
+    .download-section,
+    .mac-section,
+    .children-section,
+    .inquiry,
+    footer {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Center align text */
+    .tv-text,
+    .db-button,
+    .mac-text,
+    .child-text,
+    .foot-content {
+        text-align: center;
+    }
+
+    /* Adjust unordered list layout */
+    ul {
+        grid-template-columns: auto;
+        text-align: center;
+    }
+
+    /* Adjust download button margin */
+    .db-button {
+        margin-top: 1rem;
+    }
+
+    /* Adjust button widths */
+    .btn-inq,
+    .btn-lang {
+        width: 100%;
+    }
+
+    /* Center social media links */
+    .mylinks {
+        justify-content: center;
+    }
+
+    /* Adjust Netflix India text margin */
+    .n-ind {
+        margin-top: 1rem;
+    }
+}
+
+    </style>
+
+</head>
+
+<body>
+    <!-- background -->
+    <header>
+        <!-- for navigation bar -->
+        <nav>
+            <div class="nav-container">
+                <div class="logo"><img src="/Images NC/logo.png" alt="netflix logo" class="n-logo"></div>
+                <div class="nav-info">
+                    <div class="select-item">
+                        <span class="material-symbols-outlined">
+                            language
+                        </span>
+                        <select class="btn-lang">
+                            <option value="eng">English</option>
+                            <option value="hin">Hindi</option>
+                        </select>
+                    </div>
+                    <button class="btn-si">Sign In</button>
+                </div>
+            </div>
+        </nav>
+        <div class="login-container">
+            <div class="login-text">
+                <h1 class="log-head1">Unlimited movies, TV shows and more.</h1>
+                <p class="login-para">Watch anywhere. Cancel anytime.</p>
+            </div>
+            <div class="email-bar">
+                <div class="email-head">
+                    <h3 class="email-head-h3">Ready to watch? Enter your email to create or restart your membership.
+                    </h3>
+                </div>
+                <div class="login-email">
+                    <input type="email" name="mail" id="type-mail" placeholder="   Email address">
+                    <button class="mail-button">Get started<span class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="tv-section">
+        <div class="tv-text">
+            <h1 class="tv-head">Enjoy on your TV</h1>
+            <pre class="tv-para">
+                Watch on smart TVs, PlayStation, Xbox,
+                Chromecast, Apple TV, Blu-ray players
+                and more.
+            </pre>
+        </div>
+        <div class="tv-content">
+            <video src="/Images NC/tv-3.mp4" autoplay loop class="tv-vid"></video>
+        </div>
+    </div>
+    <div class="download-section">
+        <div class="db-phone">
+            <img src="/Images NC/mobile.jpg" alt="db-phone" class="db-mobile">
+        </div>
+        <div class="db-button">
+            <img src="/Images NC/stranger things.png" alt="btn" class="btn-img">
+            <h4 class="db-text1">Stranger Things
+                <br>
+                <p>Downloading...</p>
+            </h4>
+            <span class="material-symbols-outlined">
+                download
+            </span>
+        </div>
+        <div class="db-text">
+            <h1 class="db-head">Download your shows
+                <br>
+                to watch offline
+            </h1>
+            <div class="db-para">
+                Save your favourites easily and always have
+                <br>
+                something to watch.
+            </div>
+        </div>
+    </div>
+    <div class="mac-section">
+        <div class="mac-text">
+            <h1 class="mac-head">Watch everywhere</h1>
+            <pre class="mac-para">
+                Stream unlimited movies and TV shows on
+                your phone, tablet, laptop, and TV.</pre>
+        </div>
+        <div class="mac">
+            <video src="/Images NC/mac-3.mp4" autoplay loop class="mac-vid"></video>
+        </div>
+    </div>
+    <div class="children-section">
+        <div class="child-img">
+            <img src="/Images NC/children.png" alt="children" class="child-img-c">
+        </div>
+        <div class="child-text">
+            <h1 class="child-head">Create profiles for kids</h1>
+            <pre class="child-para">
+            Send children on adventures with their
+            favourite characters in a space made just for
+            them—free with your membership.</pre>
+        </div>
+    </div>
+    <div class="inquiry">
+        <div class="inq-para">
+            <h1>Frequently Asked Questions</h1>
+        </div>
+        <div class="inq-box">
+            <button class="bt1 btn-inq">
+                <P class="p1">What is Netflix?</P><span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
+            <button class="bt2 btn-inq">
+                <P class="p1">How much does Netflix cost?</P><span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
+            <button class="bt3 btn-inq">
+                <P class="p1">Where can i watch?</P><span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
+            <button class="bt4 btn-inq">
+                <P class="p1">How do i cancel?</P><span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
+            <button class="bt5 btn-inq">
+                <P class="p1">What can i watch on Netflix?</P><span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
+            <button class="bt6 btn-inq">
+                <P class="p1">Is Netflix good for kids?</P><span class="material-symbols-outlined">
+                    add
+                </span>
+            </button>
+        </div>
+        <div class="email-bar">
+            <div class="email-head">
+                <h3 class="email-head-h3">Ready to watch? Enter your email to create or restart your membership.</h3>
+            </div>
+            <div class="login-email">
+                <input type="email" name="mail" id="type-mail" placeholder="   Email address">
+                <button class="mail-button">Get started<span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="foot-content">
+            <div class="call">Questions? Call <a>000-800-919-1694</a></div>
+            <div class="about-us">
+                <ul>
+                    <li>FAQ</li>
+                    <li>Media Centre</li>
+                    <li>Ways to Watch</li>
+                    <li>Cookie Preferences</li>
+                    <li>Speed Test</li>
+                    <li>Help Centre</li>
+                    <li>Investor Relations</li>
+                    <li>Terms of Use</li>
+                    <li>Corporate Information</li>
+                    <li>Legal Notices</li>
+                    <li>Account</li>
+                    <li>Jobs</li>
+                    <li>Privacy</li>
+                    <li>Contact Us</li>
+                    <li>Only on Netflix</li>
+                </ul>
+            </div>
+            <div class="me">
+                <div class="select-item">
+                    <span class="material-symbols-outlined">
+                        language
+                    </span>
+                    <select class="btn-lang">
+                        <option value="eng">English</option>
+                        <option value="hin">Hindi</option>
+                    </select>
+                </div>
+                <div class="contact-me">
+                    <div class="mylinks">
+                        <p>Find me on : </p>
+                        <a href="#" target="_main"><img src="/Images NC/instagram logo.jpg" alt="Instagram"
+                                class="links"></a>
+                        <a href="#" target="_main"><img src="/Images NC/github.jpg" alt="GitHub" class="links"></a>
+                        <a href="#" target="_main"><img src="/Images NC/twitter5.jpg" alt="twitter" class="links"></a>
+                        <a href="#" target="_main"><img src="/Images NC/fb3.jpg" alt="Facebook" class="links"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="n-ind">Netflix India</div>
+        </div>
+    </footer>
+</body>
+
+</html>
